@@ -5,19 +5,19 @@ from twilio.rest import Client
 longitude = 120.412521
 latitude = 53.810331
 
-account_sid = 'AC970466a3e4666ce524b8a1287bc3249a'
-auth_token = 'ed892104d55db8d6ca599867767041f4'
+# Twilio web service.
+account_sid = 'my_account_sid_number_in_twilio_account.'
+auth_token = 'auth_token_in_twilio_account.'
 
-app_id = "6e0673bebee743b58f295b71275f13a3"
-url = "https://api.openweathermap.org/data/2.5/weather?"
+# This is API section.
+app_id = "Api_id_in_online."
+url = "Weather_api_url."
 
-
+#  Call the key for request.get() class.
 make_dict = {
-    # 'lat': 23.810331,
-    # 'lon': 90.412521,
-    'q': "Dinajpur, Dhaka,bangladesh",
+    'q': "Name_of_place.",
     'appid': app_id,
-    'exclud': "minutely,daily"
+    'exclud': "minutely,daily,monthly"
 }
 
 
@@ -38,7 +38,7 @@ if will_rain:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         body="Hi, this is test message for twilio api.",
-        from_="+13203825930",
-        to="+8801739933258"
+        from_="Phone_number_here_in_twilio_api_webservice.",
+        to="To_whom_to_send_the_number."
     )
     print("massage deliverd")
